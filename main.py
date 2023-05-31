@@ -9,7 +9,7 @@ ap.add_argument('-i', '--image', required=True, help="Image Path")
 args = vars(ap.parse_args())
 img_path = args['image']
 
-#Membaca gambar dengan opencv
+#Membaca gambar dengan library opencv
 img = cv2.imread(img_path)
 
 #mendeklarasikan variabel secara global (digunakan nanti)
