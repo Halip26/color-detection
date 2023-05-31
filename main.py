@@ -29,6 +29,7 @@ def getColorName(R,G,B):
             minimum = d
             cname = csv.loc[i,"color_name"]
     return cname
+
 #fungsi untuk mendapatkan koordinat x,y dari double klik mouse
 def draw_function(event, x,y,flags,param):
     if event == cv2.EVENT_LBUTTONDBLCLK:
