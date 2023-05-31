@@ -59,7 +59,7 @@ while(1):
         #cv2.putText(img,teks,mulai,font(0-7),fontSkala,warna,ketebalan,Jenis garis )
         cv2.putText(img, text,(50,50),2,0.8,(255,255,255),2,cv2.LINE_AA)
 
-        #Untuk warna yang sangat terang kami akan menampilkan teks dalam warna hitam
+        #Untuk warna yang sangat terang akan menampilkan teks dalam warna hitam
         if(r+g+b>=600):
             cv2.putText(img, text,(50,50),2,0.8,(0,0,0),2,cv2.LINE_AA)
             
