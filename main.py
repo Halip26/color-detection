@@ -50,7 +50,7 @@ while(1):
     cv2.imshow("image",img)
     if (clicked):
    
-        #cv2.rectangle(gambar, titik awal, titik akhi   r, warna, ketebalan) -1 mengisi seluruh persegi panjang
+        #cv2.rectangle(gambar, titik awal, titik akhir, warna, ketebalan) -1 mengisi seluruh persegi panjang
         cv2.rectangle(img,(20,20), (750,60), (b,g,r), -1)
 
         #Membuat string teks untuk ditampilkan (Nama warna dan nilai RGB)
