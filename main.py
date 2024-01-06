@@ -30,14 +30,14 @@ def getColorName(R, G, B):
     # Melakukan iterasi pada setiap baris di file csv
     for i in range(len(csv)):
         # Menghitung jarak antara warna yang dicari dengan warna pada baris i di file csv menggunakan rumus Manhattan distance
-        d = (
+        distance = (
             abs(R - int(csv.loc[i, "R"]))
             + abs(G - int(csv.loc[i, "G"]))
             + abs(B - int(csv.loc[i, "B"]))
         )
         # Jika jarak yang dihitung lebih kecil dari nilai minimum saat ini, maka update nilai minimum dan nama warna
-        if d <= minimum:
-            minimum = d
+        if distance <= minimum:
+            minimum = distance
             cname = csv.loc[i, "color_name"]
     # Mengembalikan nama warna yang paling cocok
     return cname
@@ -81,12 +81,14 @@ while True:
         """
         Ini mengambil nama warna berdasarkan nilai RGB dan menyimpannya dalam variabel text. Variabel ini juga berisi nilai R, G, dan B.
         """
-        text = getColorName(r, g, b) + " R=" + str(r) + " G=" + str(g) + " B=" + str(b)
+        text = getColorName(r, g, b) + " R=" + str(r) + \
+            " G=" + str(g) + " B=" + str(b)
 
         """
         Ini menambahkan teks ke gambar menggunakan library OpenCV. Teks yang ditambahkan adalah variabel text yang telah didefinisikan sebelumnya. Teks ini ditempatkan pada koordinat (50, 50) pada gambar. Ukuran font adalah 2 dan ketebalan font adalah 0,8. Warna teks adalah putih.
         """
-        cv2.putText(img, text, (50, 50), 2, 0.8, (255, 255, 255), 2, cv2.LINE_AA)
+        cv2.putText(img, text, (50, 50), 2, 0.8,
+                    (255, 255, 255), 2, cv2.LINE_AA)
 
         """
         Ini menambahkan teks ke gambar jika nilai total R, G, dan B lebih besar atau sama dengan 600. Teks ini ditempatkan pada koordinat (50, 50) pada gambar. Ukuran font adalah 2 dan ketebalan font adalah 0,8. Warna teks adalah hitam. 
